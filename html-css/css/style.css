@@ -1,0 +1,183 @@
+/*Arquivo css geral com estilo dos elementos de todas as páginas*/
+
+* {
+  box-sizing: border-box; /* esse *é um seletor universal, e só poderá ser subescrito se eu especificar outros elemnetos abaixo.*/
+}
+
+html{ /*regra que servirá para todo doc html*/
+  margin:0;
+  padding: 0;
+  font-family: serif; /*para subescrever essa regra só de fonte vou especificar abaixo os elementod que eu não
+  quero usar serif como h1, h2, p*/
+  font-size: 62.5%; /*o rem é uma medida relativa indexada pela elemento root do html,por isso o r. essa medida de 62.5% equivale a 10px se a medida fosse colocada diretamente em 10px o layout não ficaria adaptavel a dispositivos móveis*/
+}
+
+body {
+  background-color:#ccc
+
+}
+
+h1, h2, p, li{
+  font-family: Arial, Helvetica, sans-serif; /*é possivel definir a mesma regra para os mesmo elementos, para isso 
+ basta separá-los com virgula */
+ color: black;
+}
+
+a{
+  color: black;
+  text-decoration: none; /*remove o sublinhado so link*/
+}
+
+#primeiro-link a { /*todo id é representado pelo # antes. preciso add a tag a que representa o link, sem virgula. se eu add virgula todos os links mudam de cor, não só o primeiro. caso não utilize virgula, significa que voce está avançando um nível no elemento como se tivesse o sinal de > indicando o caminho. com virgula, todos sao afetados.*/
+  color: rgb(0, 255, 234);
+}
+
+ul{
+  background-color:darkgrey;
+  font-size: 20px;
+}
+
+ul li{
+  font-size: 0.8em; /*em é uma medida relativa para atributo. se o elemento pai UL tem 20px o atributo li elemento filho deve ter medida relatva como em 80% de 20 equivale a 16px portanto 0.8em é 16px */
+  font-size: 1.6rem; /* se eu quiser usa a medida em rem eu coloco 1.6rem equivale a 16px*/
+  width: 80%;
+  height: 3rem;
+}
+
+p{
+  font-size: 1.6rem; /*equivalente a 16px*/
+}
+
+h2{
+  font-size: 2rem; /* equivalente a 20px*/
+  height: 3rem; /*equivalente a 30px*/
+}
+.navegacao{ /* a class sempre é iniciada pelo . ela é reutilizavel e pode ser reaplica em outros elementos*/
+  background-color: transparent;
+}
+
+form div{
+  background: white;
+  border: 0;
+  border-bottom: 1px solid rgb(51, 231, 255);
+  /*border-top: 1px solid; rgb(51,231,255);
+  border-left: 1px solid; rgb(51,231,255);
+  border-right:1px solid; rgb(51,231,255); */
+  margin: 1rem 2rem;
+  padding: 2rem;
+}
+
+label{
+  margin-bottom: 1rem;
+  font-size: 1.4rem;
+  font-family: sans-serif;
+  font-weight: bold;
+  color:rgb(67, 116, 116)
+}
+
+input{
+  padding: 1rem;
+}
+
+[type="text"], [type="email"], textarea, label { 
+  /* os atributos como type devem ser chamados com colchetes antes das chaves*/
+  display: block;
+  width: 100%; /* width 100% é para ocupar toda a largura da tela, para quebra de linha é necessário o display block*/ 
+  
+}
+/* Style the header */
+header {
+  background-color: rgb(39, 126, 111);
+  padding: 30px;
+  text-align: center;
+  font-size: 35px;
+  color: white;
+}
+
+/* Create two columns/boxes that floats next to each other */
+nav {
+  float: left;
+  width: 30%;
+
+  background: #ccc;
+  padding: 20px;
+}
+
+/* Style the list inside the menu */
+nav ul {
+  list-style-type: none;
+  padding: 0;
+}
+
+article {
+  float: left;
+  padding: 20px;
+  width: 70%;
+  background-color: #f1f1f1;
+}
+
+/* Clear floats after the columns */
+section::after {
+  background: #ccc;
+  content: '';
+  display: table;
+  clear: both;
+}
+
+/* Style the footer */
+footer {
+  background-color: rgb(39, 126, 111);
+  padding: 10px;
+  text-align: center;
+  color: black;
+  font-size: large;
+}
+
+/* Responsive layout - makes the two columns/boxes stack on top of each other instead of next to each other, on small screens */
+@media (max-width: 600px) {
+  nav,
+  article {
+    width: 100%;
+    height: auto;
+  }
+}
+
+.coluna{
+  display: block;
+  width: 50%;
+  float:left;
+  padding: 5px;
+
+}
+
+.coluna-3{
+  columns: 100px 2;
+  width: 60%;
+
+}
+
+iframe{
+  width: 100%;
+}
+
+/*Conceitos de posicionamento; são essas as propriedades que o css utiliza para posicionamento
+top(cima)
+bottom(baixo)
+left(esquerda)
+rigth (direita)*/
+
+ form div{
+  position: static; /*definida pelo html padrão*/
+  position: relative;/*pode ser alterada e serve de referencia para as outras divs*/
+  margin-top: -10px;
+}
+
+/*
+label{
+  position: absolute;
+}
+*/
+
+.classe, #id, body{
+  /*mais detalhes..*/
+}
